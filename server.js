@@ -13,9 +13,9 @@ app.get('/', function (req, res){
 const port = process.env.PORT || 3000;
 
 const server = http.createServer(app)
-                 .listen(port, function () {
-                    console.log('Listening on port ' + port + '.');
-                  });
+server.listen(port, function () {
+  console.log('Listening on port ' + port + '.');
+});
 
 const io = socketIo(server);
 
@@ -29,6 +29,7 @@ io.on('connection', function (socket) {
   socket.on('message', function (channel, message) {
     if (channel === 'voteCast') {
       votes[socket.id] = message;
+      socket.broadcast.emit('voteCount', countVotes(votes));
       socket.emit('voteCount', countVotes(votes));
     }
   });

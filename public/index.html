@@ -1,18 +1,48 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="/app.css" media="screen" title="no title" charset="utf-8">
     <title>Ask the Audience</title>
   </head>
   <body>
-    <div id="connection-count"></div>
-    <div id="status-message"></div>
-    <div id="choices">
-      <button>A</button>
-      <button>B</button>
-      <button>C</button>
-      <button>D</button>
-    </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/client.js"></script>
-  </body>
+    <div class="container center top-margin">
+      <div id="connection-count"></div>
+      <div id="status-message"></div>
+      <div id="choices">
+        <button class="btn blue">A</button>
+        <button class="btn blue">B</button>
+        <button class="btn blue">C</button>
+        <button class="btn blue">D</button>
+      </div>
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div id="vote-count">
+            <h3>Vote Count</h3>
+            <table class="bordered highlight centered top-margin">
+              <thead>
+                <tr>
+                  <td>A</td>
+                  <td>B</td>
+                  <td>C</td>
+                  <td>D</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="red-text">
+                  <td id="a">0</td>
+                  <td id="b">0</td>
+                  <td id="c">0</td>
+                  <td id="d">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/client.js"></script>
+  </div>
+</body>
 </html>
