@@ -2,11 +2,12 @@ var socket = io();
 
 var connectionCount = document.getElementById('connection-count');
 var statusMessage = document.getElementById('status-message');
-var buttons = document.querySelectorAll('#choices button');
+var buttons = $('button')
 var aVoteCount = document.getElementById('a');
 var bVoteCount = document.getElementById('b');
 var cVoteCount = document.getElementById('c');
 var dVoteCount = document.getElementById('d');
+var yourVote = $('#your-vote')
 
 socket.on('usersConnected', function (count) {
   connectionCount.innerText = 'Connected Users: ' + count;
@@ -26,6 +27,8 @@ socket.on('voteCount', function (votes) {
 
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function () {
+    $.each(buttons, function(index, value) {value.remove()})
     socket.send('voteCast', this.innerText);
+    yourVote.append(this.innerText)
   });
 }
