@@ -1,12 +1,12 @@
 var socket = io();
 
-var connectionCount = document.getElementById('connection-count');
-var statusMessage = document.getElementById('status-message');
-var buttons = $('button')
-var aVoteCount = document.getElementById('a');
-var bVoteCount = document.getElementById('b');
-var cVoteCount = document.getElementById('c');
-var dVoteCount = document.getElementById('d');
+var connectionCount = $('#connection-count');
+var statusMessage = $('#status-message');
+var buttons = $('button');
+var aVoteCount = $("#a");
+var bVoteCount = $('#b');
+var cVoteCount = $('#c');
+var dVoteCount = $('#d');
 var yourVote = $('#your-vote')
 
 socket.on('usersConnected', function (count) {
