@@ -1,0 +1,31 @@
+{
+  "name": "ask-the-audience",
+  "version": "1.0.0",
+  "description": "a crowdsource polling app with websockets",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossedfort/ask-the-audience.git"
+  },
+  "keywords": [
+    "ask",
+    "audience",
+    "poll",
+    "socket"
+  ],
+  "author": "Ross Edfort",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rossedfort/ask-the-audience/issues"
+  },
+  "homepage": "https://github.com/rossedfort/ask-the-audience#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "lodash": "^4.6.0",
+    "socket.io": "^1.4.5"
+  }
+}
