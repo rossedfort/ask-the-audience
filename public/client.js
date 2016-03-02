@@ -19,10 +19,10 @@ socket.on('statusMessage', function (message) {
 });
 
 socket.on('voteCount', function (votes) {
-  aVoteCount.firstChild.data = votes.A;
-  bVoteCount.firstChild.data = votes.B;
-  cVoteCount.firstChild.data = votes.C;
-  dVoteCount.firstChild.data = votes.D;
+  aVoteCount[0].innerHTML = votes.A;
+  bVoteCount[0].innerHTML = votes.B;
+  cVoteCount[0].innerHTML = votes.C;
+  dVoteCount[0].innerHTML = votes.D;
 });
 
 for (var i = 0; i < buttons.length; i++) {
