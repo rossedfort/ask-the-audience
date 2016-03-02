@@ -7,14 +7,16 @@ var aVoteCount = $("#a");
 var bVoteCount = $('#b');
 var cVoteCount = $('#c');
 var dVoteCount = $('#d');
-var yourVote = $('#your-vote')
+var yourVote = $('#your-vote');
+var prompt = $('#prompt');
+
 
 socket.on('usersConnected', function (count) {
   connectionCount.innerText = 'Connected Users: ' + count;
 });
 
 socket.on('statusMessage', function (message) {
-  statusMessage.innerText = message;
+  statusMessage[0].innerText = message;
   $('#status-message').fadeOut(2000);
 });
 
@@ -30,5 +32,6 @@ for (var i = 0; i < buttons.length; i++) {
     $.each(buttons, function(index, value) {value.remove()})
     socket.send('voteCast', this.innerText);
     yourVote.append(this.innerText)
+    prompt[0].innerHTML = "Thank you for your Vote!"
   });
 }

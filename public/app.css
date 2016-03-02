@@ -9,3 +9,13 @@
 td {
   text-align: center;
 }
+
+#vote-count {
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+tr {
+  border-top: 1px solid #ccc;
+}
